@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+    	<title>Slam</title>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	</head>
+	<body style="background:url('https://images.unsplash.com/photo-1551029506-0807df4e2031?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1191&q=80');">
+		<div class="container">
+			<div class="row">
+				<div class="col p-4">
+					<div class="card p-4">
+						<h1 class="display-4" th:text="'Hello, welcome to Vishal\'s slam page! Please fill the below fields:'" />
+						<form action="#" th:action="@{/}" th:object="${slam}" method="post">
+							<div class="form-group">
+							    <label for="name">Name</label>
+							    <input type="text" class="form-control" id="name" placeholder="Who are you?" th:field="*{name}">
+							</div>
+							<div class="form-group">
+							    <label for="meet">When/how did we meet?</label>
+							    <textarea class="form-control" id="meet" rows="3" th:field="*{meet}"></textarea>
+							</div>
+							<div class="form-group">
+							    <label for="toyou">What am I to you?</label>
+							    <input type="text" class="form-control" id="toyou" th:field="*{toyou}">
+							</div>
+							<div class="form-group">
+							    <label for="nickme">Your nickname for me?</label>
+							    <input type="text" class="form-control" id="nickme" th:field="*{nickme}">
+							</div>
+							<div class="form-group">
+							    <label for="mem">Your favourite memory of us?</label>
+							    <textarea class="form-control" id="mem" rows="3" th:field="*{mem}"></textarea>
+							</div>
+							<div class="form-group">
+							    <label for="friendship">On a scale of 1 to 10, how would you rate our friendship?</label>
+							    <select multiple class="form-control" id="friendship" th:field="*{friendship}">
+							      <option value="1">1</option>
+							      <option value="2">2</option>
+							      <option value="3">3</option>
+							      <option value="4">4</option>
+							      <option value="5">5</option>
+							      <option value="6">6</option>
+							      <option value="7">7</option>
+							      <option value="8">8</option>
+							      <option value="9">9</option>
+							      <option value="10">10</option>
+							    </select>
+							</div>
+							<div class="form-group">
+							    <label for="phone">What's your phone number?</label>
+							    <input type="text" class="form-control" id="phone" th:field="*{phone}">
+							</div>
+							<div class="form-group">
+							    <label for="email">And your email ID?</label>
+							    <input type="email" class="form-control" id="email" th:field="*{email}">
+							</div>
+							<button type="submit" class="btn btn-primary mb-2">Submit!</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
